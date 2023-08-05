@@ -4,11 +4,11 @@ class Producto:
         self.cantidad = cantidad
         self.precio_unitario = precio_unitario
         self.ubicacion = ubicacion
+    
 
-
-def cargar_inventario(nombre_archivo):
+def cargar_inventario(nombre_ar):
     inventario = []
-    with open(nombre_archivo, 'r') as archivo:
+    with open(nombre_ar, 'r') as archivo:
         for linea in archivo:
             if linea.startswith('crear_producto'):
                 instruccion = linea.strip().split(';')
@@ -20,14 +20,13 @@ def cargar_inventario(nombre_archivo):
                 inventario.append(producto)
     return inventario
 
+#lugar= r'C:\Users\natalia\Documents\archivo.inv'
 
-lugar= r'C:\Users\natalia\Documents\archivo.inv'
+#inventario_inicial = cargar_inventario(lugar)
 
-inventario_inicial = cargar_inventario(lugar)
-
-if len(inventario_inicial) == 0:
-    print("El inventario está vacío.")
-else:
-    for producto in inventario_inicial:
-        print("-----------------------------------------------------------------")
-        print("Nombre:",producto.nombre, "Cantidad:", producto.cantidad, "Precio Unitario:", producto.precio_unitario, "Ubicación:", producto.ubicacion )
+#if len(inventario_inicial) == 0:
+    #print("El inventario está vacío.")
+#else:
+    #for producto in inventario_inicial:
+        #print("-----------------------------------------------------------------")
+        #print("Nombre:",producto.nombre, "Cantidad:", producto.cantidad, "Precio Unitario:", producto.precio_unitario, "Ubicación:", producto.ubicacion )
