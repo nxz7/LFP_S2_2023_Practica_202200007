@@ -1,3 +1,5 @@
+from Producto import cargar_inventario
+
 def mostrar_menu():
     while True:
         print("\n-----------------------------------")
@@ -12,6 +14,15 @@ def mostrar_menu():
 
         if opcion == "1":
             print("Cargando inventario inicial")
+            lugar = r'C:\Users\natalia\Documents\archivo.inv'
+            inventario_inicial = cargar_inventario(lugar)
+            if len(inventario_inicial) == 0:
+                print("El inventario está vacío.")
+            else:
+                for producto in inventario_inicial:
+                    print("-----------------------------------------------------------------")
+                    print("Nombre:",producto.nombre, "Cantidad:", producto.cantidad, "Precio Unitario:", producto.precio_unitario, "Ubicación:", producto.ubicacion )
+
         elif opcion == "2":
             print("Cargando instrucciones de movimiento")
         elif opcion == "3":
