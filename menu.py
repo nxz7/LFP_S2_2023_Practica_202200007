@@ -1,5 +1,6 @@
 from Producto import cargar_inventario
 from movimiento import cargar_movimientos
+from Informe import archivo_texto
 
 lugar = r'C:\Users\natalia\Documents\4sem\lfp\LFP_S2_2023_Practica_202200007\archivo.inv'
 inventario_inicial = cargar_inventario(lugar)
@@ -40,6 +41,9 @@ def mostrar_menu():
 
         elif opcion == "3":
             print("Creando informe de inventario")
+            print("INFORME DE INVENTARIO:")
+            print("INFORME DESCARGADO CORRECTAMENTE")
+            archivo_texto('resultado_202200007.txt', inventario_inicial)
         elif opcion == "4":
             print("Saliendo del sistema")
             break
