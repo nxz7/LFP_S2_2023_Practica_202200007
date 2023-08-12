@@ -2,16 +2,14 @@ from Producto import cargar_inventario
 from movimiento import cargar_movimientos
 from Informe import archivo_texto
 
-lugar = r'C:\Users\natalia\Documents\4sem\lfp\LFP_S2_2023_Practica_202200007\archivo.inv'
-inventario_inicial = cargar_inventario(lugar)
-mov_archivo = r'C:\Users\natalia\Documents\4sem\lfp\LFP_S2_2023_Practica_202200007\movimientos.mov'
-
 def mostrar_menu():
-    global lugar, inventario_inicial, mov_archivo  
+    lugar = input("Ingrese la dirección del archivo de inventario: ")
+    inventario_inicial = cargar_inventario(lugar)
+    mov_archivo = input("Ingrese la dirección del archivo de movimientos: ")
 
     while True:
         print("\n-----------------------------------")
-        print("Practica 1 - Lenguajes formales y de programacion")
+        print("Práctica 1 - Lenguajes formales y de programación")
         print("-----------------------------------")
         print("SISTEMA DE INVENTARIO:")
         print("1. Cargar inventario inicial")
@@ -26,10 +24,10 @@ def mostrar_menu():
             else:
                 for producto in inventario_inicial:
                     print("-----------------------------------------------------------------")
-                    print("Nombre:",producto.nombre, "Cantidad:", producto.cantidad, "Precio Unitario:", producto.precio_unitario, "Ubicación:", producto.ubicacion )
+                    print("Nombre:", producto.nombre, "Cantidad:", producto.cantidad, "Precio Unitario:", producto.precio_unitario, "Ubicación:", producto.ubicacion)
 
         elif opcion == "2":
-            if lugar:
+            if mov_archivo:
                 print("Cargando instrucciones de movimiento")
                 cargar_movimientos(mov_archivo, inventario_inicial)
                 print("----------------INVENTARIO ACTUALIZADO CON LOS MOVIMIENTOS-----------------")
