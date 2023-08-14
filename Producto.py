@@ -11,11 +11,11 @@ def cargar_inventario(nombre_ar):
     with open(nombre_ar, 'r') as archivo:
         for linea in archivo:
             if linea.startswith('crear_producto'):
-                instruccion = linea.strip().split(';')
-                nombre = instruccion[1].strip()
-                cantidad = int(instruccion[2].strip())  
-                precio_unitario = float(instruccion[3].strip())  
-                ubicacion = instruccion[4].strip()
+                instruccion = linea.strip().split(' ')[1].split(';')
+                nombre = instruccion[0].strip()
+                cantidad = int(instruccion[1].strip())
+                precio_unitario = float(instruccion[2].strip())
+                ubicacion = instruccion[3].strip()
                 producto = Producto(nombre, cantidad, precio_unitario, ubicacion)
                 inventario.append(producto)
     return inventario
