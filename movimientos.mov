@@ -1,2 +1,7 @@
 vender_producto Peras;20;BodegaB
 agregar_stock Calabacines;4;BodegaL
+agregar_stock Platanos;26;BodegaV
+vender_producto JudíasVerdes;28;BodegaW
+vender_producto Peras;20;BodegaB
+agregar_stock Platanos;279;BodegaB
+agregar_stock Apio;262;BodegaB
